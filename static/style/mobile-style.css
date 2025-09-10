@@ -1,0 +1,202 @@
+:root {
+    --font-size-p: 3vw;
+    --font-size-h1: 6vw;
+    --font-size-h2: 4vw;
+    --font-size-h3: 3.5vw;
+    --font-size-h4: 4vw;
+}
+
+.mobile-off{
+    display: none;
+}
+.mobile-break{
+    display:inline;
+}
+
+/*  edits the header so the top of the image is cropped, uses mobile only js to  dynamically resize container*/
+
+.site-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-img-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 30vw;
+}
+.header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    transition: top 0.3s ease;
+}
+.site-header h1{
+    margin-top: 8%;
+}
+.site-header h3{
+    font-size: 3vw;
+}
+
+/* section type 1 edits*/
+/* override order of elements on mobile so image stacks below text for section 1*/
+.section-type-1 .section-content {
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-top: 0;
+    gap: calc(2% + 10px);
+}
+.section-type-1 .section-content .section-information {
+    order: -1; 
+}
+.section-type-1 .section-content p{
+    margin: 0
+}
+.section-type-1 .small-img{
+    border: .2rem solid var(--tan) ;
+    margin-bottom: -2.5rem;
+    width: 70%;
+}
+
+/* fix headers */
+.section-header{
+    margin: 0;
+}
+
+/* section type 2 mobile fix */
+.section-type-2 .section-content{
+    flex-direction: column;
+    align-items: center;
+}
+.section-type-2 .small-img{
+    width:60%;
+}
+h4{
+    margin: 2vw 0;
+}
+/* editing banner wrapper with navy paragraph for mobile */
+.section-type-2 .banner-wrapper{
+    position: relative;
+}
+.section-type-2 p.navy-p{
+    text-indent: 0rem;
+    position: static;
+    box-sizing: border-box;
+    inset: unset;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 10%;
+    padding-top: 8%;
+}
+
+/* changing section type 1 margin for "rise of japanese bartending" section */
+.section-type-1 .mobile-more-margin {
+    margin: 5vw 0;
+}
+
+/* mobile purchase section */
+.section-type-3{
+    color: var(--tan)
+}
+
+.purchase-container{
+    grid-template-columns: 1fr;
+    margin-top: 2%;
+    gap:0;
+}
+.purchase-bottle{
+    display: flex;
+    flex-direction: row;
+    border-bottom: var(--orange) solid 0.2rem;
+}
+.info-overlay{
+    inset:unset;
+    position: relative;
+    opacity: 1;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    width: 100%;
+    cursor: auto;
+    color: #000000;
+    background-color: inherit;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-overlay:hover {
+    width: auto;
+    height: auto;
+    top: auto;
+}
+
+.purchase-bottle img{
+    width:40%;
+    padding: 4%;
+}
+.purchase-bottle:hover img {
+    transform: scale(1);
+}
+
+.info-overlay a {
+    align-self: auto; 
+    margin-bottom: 0;
+    padding: 5% 5% 5% 0;
+}
+.info-overlay a h3{
+    margin-top:1vw;
+}
+.purchase-bottle:last-child{
+    border: none;
+}
+
+/* Strong mobile reset: undo any parallax transforms/positioning set inline or by desktop CSS */
+html, body {
+    overflow-x: hidden !important; /* prevent horizontal scroll on small screens */
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.parallax-container {
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Ensure banner images are fully restored to normal flow and cannot keep transforms/positioning */
+.parallax-container .banner-img,
+.banner-wrapper .banner-img,
+.parallax-item,
+.parallax-picture img {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+}
+
+/* Also reset any inline style that may have been applied to picture elements */
+.parallax-container picture,
+.parallax-container .parallax-picture {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
