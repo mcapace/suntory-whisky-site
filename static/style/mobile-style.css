@@ -1,18 +1,14 @@
 /* Mobile Styles for Premium Suntory Site */
 
 :root {
-    --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
-    --font-size-sm: clamp(0.875rem, 1.8vw, 1rem);
-    --font-size-base: clamp(1rem, 2.2vw, 1.125rem);
-    --font-size-lg: clamp(1.125rem, 2.5vw, 1.25rem);
-    --font-size-xl: clamp(1.25rem, 2.8vw, 1.5rem);
-    --font-size-2xl: clamp(1.5rem, 3.2vw, 2rem);
-    --font-size-3xl: clamp(1.875rem, 3.8vw, 2.5rem);
-    --font-size-4xl: clamp(2.25rem, 4.4vw, 3rem);
-    --font-size-5xl: clamp(3rem, 5vw, 4rem);
-    --font-size-6xl: clamp(3.75rem, 6vw, 5rem);
-    --font-size-7xl: clamp(4.5rem, 7vw, 6rem);
+    /* Mobile Typography */
+    --font-size-p: 3vw;
+    --font-size-h1: 6vw;
+    --font-size-h2: 4vw;
+    --font-size-h3: 3.5vw;
+    --font-size-h4: 4vw;
     
+    /* Mobile Spacing */
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
@@ -22,189 +18,288 @@
     --space-3xl: 4rem;
     --space-4xl: 5rem;
     --space-5xl: 6rem;
-    --space-6xl: 8rem;
 }
 
-/* Mobile Layout Adjustments */
-.two-column-layout {
-  grid-template-columns: 1fr !important;
-  gap: var(--space-3xl) !important;
+/* Base Mobile Layout */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
-.content-section {
-  padding: var(--space-4xl) var(--space-lg) !important;
-}
-
-.section-header {
-  margin-bottom: var(--space-3xl) !important;
-}
-
-/* Mobile Hero Section */
-.hero-content h1 {
-  font-size: var(--font-size-5xl) !important;
-}
-
-.hero-content h2 {
-  font-size: var(--font-size-lg) !important;
-}
-
-/* Mobile Quote Sections */
-.quote-section,
-.philosophy-section {
-  height: 60vh !important;
-}
-
-.quote-overlay,
-.philosophy-overlay {
-  width: 100% !important;
-  background: linear-gradient(135deg, rgba(20, 42, 48, 0.95) 0%, rgba(20, 42, 48, 0.85) 100%) !important;
-  padding: var(--space-lg) !important;
-}
-
-.quote-content,
-.philosophy-content {
-  max-width: none !important;
-}
-
-.quote-text {
-  font-size: var(--font-size-base) !important;
-}
-
-/* Mobile Timeline Section */
-.timeline-section {
-  padding: var(--space-4xl) var(--space-lg) !important;
-}
-
-.timeline-container {
-  grid-template-columns: 1fr !important;
-  gap: var(--space-xl) !important;
-}
-
-.timeline-step {
-  padding: var(--space-lg) !important;
-}
-
-.timeline-number {
-  width: 50px !important;
-  height: 50px !important;
-  font-size: var(--font-size-xl) !important;
-}
-
-/* Mobile Purchase Section */
-.purchase-section {
-  padding: var(--space-4xl) var(--space-lg) !important;
-}
-
-.products-grid {
-  grid-template-columns: 1fr !important;
-  gap: var(--space-xl) !important;
-}
-
-.product-card {
-  padding: var(--space-lg) !important;
-}
-
-.product-img {
-  height: 250px !important;
-}
-
-/* Mobile Ingredients Section */
-.ingredients-section {
-  padding: var(--space-4xl) var(--space-lg) !important;
-}
-
-.ingredients-grid {
-  grid-template-columns: 1fr !important;
-  gap: var(--space-xl) !important;
-}
-
-.ingredient-item {
-  padding: var(--space-lg) !important;
-}
-
-.ingredient-percentage {
-  font-size: var(--font-size-4xl) !important;
-}
-
-/* Mobile Typography */
+/* Mobile Typography Override */
 h1 {
-  font-size: var(--font-size-4xl) !important;
-}
-
-h2 {
-  font-size: var(--font-size-lg) !important;
+    font-size: var(--font-size-h1) !important;
 }
 
 h3 {
-  font-size: var(--font-size-base) !important;
+    font-size: var(--font-size-h3) !important;
 }
 
 p {
-  font-size: var(--font-size-sm) !important;
+    font-size: var(--font-size-p) !important;
+}
+
+.mobile-break {
+    display: inline !important;
+}
+
+.mobile-off {
+    display: none !important;
 }
 
 /* Mobile Logo */
 .logo-header {
-  top: var(--space-lg) !important;
-  padding: var(--space-xs) var(--space-md) !important;
+    top: var(--space-lg) !important;
+    padding: var(--space-xs) var(--space-md) !important;
 }
 
 .logo-header img {
-  height: 24px !important;
+    height: 24px !important;
+}
+
+/* Mobile Hero */
+.hero-content h1 {
+    font-size: var(--font-size-h1) !important;
+}
+
+.hero-content h2 {
+    font-size: var(--font-size-h3) !important;
+}
+
+.hero {
+    height: 100vh !important;
+}
+
+/* Mobile Header Image Cropping */
+.hero-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Mobile Section Layout */
+.section-content {
+    margin: 0 5% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: calc(2% + 10px) !important;
+}
+
+.section-header {
+    margin: 0 !important;
+    margin-bottom: var(--space-3xl) !important;
+}
+
+.section-information {
+    order: -1 !important;
+    margin: 5vw 0 !important;
+}
+
+.section-content p {
+    margin: 0 !important;
+}
+
+.small-img {
+    border: .2rem solid var(--tan) !important;
+    margin-bottom: -2.5rem !important;
+    width: 70% !important;
+}
+
+/* Mobile Section Type 2 */
+.section-type-2 .section-content {
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.section-type-2 .small-img {
+    width: 60% !important;
+}
+
+h4 {
+    margin: 2vw 0 !important;
+}
+
+.section-type-2 .banner-wrapper {
+    position: relative !important;
+}
+
+.section-type-2 p.navy-p {
+    text-indent: 0rem !important;
+    position: static !important;
+    box-sizing: border-box !important;
+    inset: unset !important;
+    margin: 0 !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    padding: 10% !important;
+    padding-top: 8% !important;
+}
+
+/* Mobile Timeline Section */
+.timeline-section {
+    padding: var(--space-4xl) var(--space-lg) !important;
+}
+
+.timeline-container {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl) !important;
+}
+
+.timeline-step {
+    padding: var(--space-lg) !important;
+}
+
+.timeline-number {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: var(--font-size-xl) !important;
+}
+
+/* Mobile Purchase Section */
+.section-type-3 {
+    color: var(--tan) !important;
+    padding: var(--space-4xl) var(--space-lg) !important;
+}
+
+.purchase-container {
+    grid-template-columns: 1fr !important;
+    margin-top: 2% !important;
+    gap: 0 !important;
+}
+
+.purchase-bottle {
+    display: flex !important;
+    flex-direction: row !important;
+    border-bottom: var(--orange) solid 0.2rem !important;
+    border-radius: 0 !important;
+}
+
+.purchase-bottle:last-child {
+    border: none !important;
+}
+
+.purchase-bottle img {
+    width: 40% !important;
+    padding: 4% !important;
+}
+
+.purchase-bottle:hover img {
+    transform: scale(1) !important;
+}
+
+.info-overlay {
+    inset: unset !important;
+    position: relative !important;
+    opacity: 1 !important;
+    box-sizing: border-box !important;
+    padding: 0 1rem !important;
+    width: 100% !important;
+    cursor: auto !important;
+    color: #000000 !important;
+    background-color: inherit !important;
+    border: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.info-overlay:hover {
+    width: auto !important;
+    height: auto !important;
+    top: auto !important;
+    opacity: 1 !important;
+}
+
+.info-overlay a {
+    align-self: auto !important;
+    margin-bottom: 0 !important;
+    padding: 5% 5% 5% 0 !important;
+}
+
+.info-overlay a h3 {
+    margin-top: 1vw !important;
+}
+
+/* Mobile Ingredients Section */
+.ingredients-section {
+    padding: var(--space-4xl) var(--space-lg) !important;
+}
+
+.ingredients-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl) !important;
+}
+
+.ingredient-item {
+    padding: var(--space-lg) !important;
+}
+
+.ingredient-percentage {
+    font-size: var(--font-size-4xl) !important;
+}
+
+/* Mobile Parallax Reset */
+.parallax-container {
+    height: auto !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+.parallax-container .banner-img,
+.banner-wrapper .banner-img,
+.parallax-item,
+.parallax-picture img {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+}
+
+.parallax-container picture,
+.parallax-container .parallax-picture {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Mobile Hover Disable */
+.purchase-bottle:hover,
+.timeline-step:hover,
+.ingredient-item:hover {
+    transform: none !important;
+}
+
+.shop-button:hover {
+    transform: none !important;
+}
+
+/* Mobile Animation Disable */
+.animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* Mobile Footer */
 .site-footer {
-  padding: var(--space-2xl) var(--space-lg) !important;
-}
-
-/* Mobile Animations */
-.animate-on-scroll,
-.animate-left,
-.animate-right,
-.animate-scale {
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* Mobile Header Image Cropping */
-.hero-image {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* Mobile Product Cards */
-.product-card:hover {
-  transform: none !important;
-}
-
-.product-card:hover .product-img {
-  transform: none !important;
-}
-
-/* Mobile Shop Buttons */
-.shop-button {
-  padding: var(--space-xs) var(--space-md) !important;
-  font-size: var(--font-size-xs) !important;
-}
-
-.shop-button:hover {
-  transform: none !important;
-}
-
-/* Mobile Timeline Steps */
-.timeline-step:hover {
-  transform: none !important;
-}
-
-/* Mobile Ingredient Items */
-.ingredient-item:hover {
-  transform: none !important;
+    padding: var(--space-2xl) var(--space-lg) !important;
 }

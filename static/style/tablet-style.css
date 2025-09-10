@@ -1,42 +1,74 @@
-/* Tablet-specific styles */
-@media (min-width: 768px) and (max-width: 1023px) {
-    :root {
-        --font-size-p: 2vw;
-        --font-size-h1: 4.5vw;
-        --font-size-h2: 3.5vw;
-        --font-size-h3: 2.5vw;
-        --font-size-h4: 2vw;
-    }
+/* Tablet Styles (768px - 1023px) */
+
+:root {
+    /* Tablet Typography */
+    --font-size-p: 2.2vw;
+    --font-size-h1: 4.5vw;
+    --font-size-h3: 2.5vw;
+    --font-size-h4: 2.2vw;
     
-    .purchase-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3%;
-    }
-    
-    .section-content {
-        margin: 3% 8%;
-        gap: 4%;
-    }
-    
-    .small-img {
-        width: 40%;
-    }
-    
-    .section-type-1 .small-img {
-        margin-bottom: -3rem;
-    }
-    
-    .section-type-2 p.navy-p {
-        width: 35%;
-        padding: 3%;
-        padding-top: 2%;
-    }
-    
-    .logo-header img {
-        width: 25%;
-    }
-    
-    .parallax-container {
-        --parallax-height: 35rem;
-    }
+    /* Tablet Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 5rem;
+    --space-4xl: 6rem;
+    --space-5xl: 8rem;
+}
+
+/* Tablet Layout Adjustments */
+.section-content {
+    margin: 3% 8% !important;
+    gap: 4% !important;
+}
+
+.small-img {
+    width: 40% !important;
+}
+
+/* Tablet Purchase Section */
+.purchase-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 2% 8% !important;
+    gap: 3% !important;
+}
+
+/* Tablet Timeline */
+.timeline-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-2xl) !important;
+}
+
+/* Tablet Ingredients */
+.ingredients-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-2xl) !important;
+}
+
+/* Tablet Navy Paragraph */
+.section-type-2 p.navy-p {
+    width: 35% !important;
+    padding: 3% !important;
+    font-size: var(--font-size-p) !important;
+}
+
+/* Tablet Hero */
+.hero-content h1 {
+    font-size: var(--font-size-h1) !important;
+}
+
+.hero-content h2 {
+    font-size: var(--font-size-h3) !important;
+}
+
+/* Tablet Logo */
+.logo-header {
+    padding: var(--space-sm) var(--space-lg) !important;
+}
+
+.logo-header img {
+    height: 28px !important;
 }
