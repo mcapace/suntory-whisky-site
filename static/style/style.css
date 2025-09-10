@@ -102,7 +102,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    padding-top: 120px; /* Account for fixed navigation */
+    padding-top: 130px; /* Account for fixed navigation */
 }
 
 /* Enhanced Typography */
@@ -196,7 +196,7 @@ p {
     border-bottom: 2px solid var(--orange);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     z-index: 99;
-    padding: var(--space-xl) 0;
+    padding: var(--space-2xl) 0;
     transition: var(--transition-normal);
 }
 
@@ -213,8 +213,8 @@ p {
     align-items: center;
     list-style: none;
     margin: 0;
-    padding: 0;
-    gap: var(--space-lg);
+    padding: var(--space-lg) 0 0 0;
+    gap: var(--space-xl);
     flex-wrap: nowrap;
     width: 100%;
     position: relative;
