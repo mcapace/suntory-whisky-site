@@ -1,9 +1,25 @@
 :root {
-    --font-size-p: 3vw;
-    --font-size-h1: 6vw;
-    --font-size-h2: 4vw;
-    --font-size-h3: 3.5vw;
-    --font-size-h4: 4vw;
+    --font-size-xs: clamp(0.75rem, 2vw, 1rem);
+    --font-size-sm: clamp(0.875rem, 2.5vw, 1.25rem);
+    --font-size-base: clamp(1rem, 3vw, 1.5rem);
+    --font-size-lg: clamp(1.125rem, 3.5vw, 1.75rem);
+    --font-size-xl: clamp(1.25rem, 4vw, 2rem);
+    --font-size-2xl: clamp(1.5rem, 5vw, 2.5rem);
+    --font-size-3xl: clamp(1.875rem, 6vw, 3rem);
+    --font-size-4xl: clamp(2.25rem, 7vw, 3.5rem);
+    --font-size-5xl: clamp(3rem, 8vw, 4rem);
+    --font-size-6xl: clamp(3.75rem, 10vw, 5rem);
+    --font-size-7xl: clamp(4.5rem, 12vw, 6rem);
+    
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 5rem;
+    --space-5xl: 6rem;
 }
 
 .mobile-off{
@@ -42,25 +58,31 @@
     font-size: 3vw;
 }
 
-/* section type 1 edits*/
-/* override order of elements on mobile so image stacks below text for section 1*/
+/* Mobile Section Layouts */
+.section-content {
+  grid-template-columns: 1fr !important;
+  gap: var(--space-2xl) !important;
+  padding: var(--space-2xl) var(--space-lg) !important;
+}
+
 .section-type-1 .section-content {
-    display:flex;
-    flex-direction: column; 
-    align-items: center;
-    margin-top: 0;
-    gap: calc(2% + 10px);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
 }
+
 .section-type-1 .section-content .section-information {
-    order: -1; 
+  order: -1;
 }
-.section-type-1 .section-content p{
-    margin: 0
+
+.section-type-1 .small-img {
+  width: 80%;
+  margin: 0;
+  border: 2px solid var(--white);
 }
-.section-type-1 .small-img{
-    border: .2rem solid var(--tan) ;
-    margin-bottom: -2.5rem;
-    width: 70%;
+
+.section-header {
+  padding: var(--space-2xl) var(--space-lg) !important;
 }
 
 /* fix headers */
@@ -105,31 +127,39 @@ h4{
     color: var(--tan)
 }
 
-.purchase-container{
-    grid-template-columns: 1fr;
-    margin-top: 2%;
-    gap:0;
+.purchase-container {
+  grid-template-columns: 1fr !important;
+  gap: var(--space-lg) !important;
+  padding: 0 var(--space-lg) !important;
 }
-.purchase-bottle{
-    display: flex;
-    flex-direction: row;
-    border-bottom: var(--orange) solid 0.2rem;
+
+.purchase-bottle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-lg);
+  border-bottom: 2px solid var(--orange);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg) !important;
 }
-.info-overlay{
-    inset:unset;
-    position: relative;
-    opacity: 1;
-    box-sizing: border-box;
-    padding: 0 1rem;
-    width: 100%;
-    cursor: auto;
-    color: #000000;
-    background-color: inherit;
-    border: none;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+.purchase-bottle:last-child {
+  border-bottom: none;
+}
+.info-overlay {
+  inset: unset !important;
+  position: relative !important;
+  opacity: 1 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .info-overlay:hover {
@@ -138,12 +168,16 @@ h4{
     top: auto;
 }
 
-.purchase-bottle img{
-    width:40%;
-    padding: 4%;
+.purchase-bottle img {
+  width: 120px !important;
+  height: 200px !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
 .purchase-bottle:hover img {
-    transform: scale(1);
+  transform: none !important;
 }
 
 .info-overlay a {
