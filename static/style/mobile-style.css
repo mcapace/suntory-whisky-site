@@ -1,23 +1,23 @@
 /* Mobile Styles for Premium Suntory Site */
 
 :root {
-    /* Mobile Typography */
-    --font-size-p: 3vw;
-    --font-size-h1: 6vw;
-    --font-size-h2: 4vw;
-    --font-size-h3: 3.5vw;
-    --font-size-h4: 4vw;
+    /* Mobile Typography - Reduced */
+    --font-size-p: 2.5vw;
+    --font-size-h1: 5vw;
+    --font-size-h2: 3.5vw;
+    --font-size-h3: 3vw;
+    --font-size-h4: 3.5vw;
     
-    /* Mobile Spacing */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 2.5rem;
-    --space-2xl: 3rem;
-    --space-3xl: 4rem;
-    --space-4xl: 5rem;
-    --space-5xl: 6rem;
+    /* Mobile Spacing - Reduced */
+    --space-xs: 0.25rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 3rem;
+    --space-4xl: 3.5rem;
+    --space-5xl: 4rem;
 }
 
 /* Base Mobile Layout */
@@ -100,7 +100,7 @@ p {
 
 .section-information {
     order: -1 !important;
-    margin: 5vw 0 !important;
+    margin: 3vw 0 !important;
 }
 
 .section-content p {

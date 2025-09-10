@@ -46,21 +46,21 @@
     --font-size-4xl: clamp(2.25rem, 3.4vw, 3rem);
     --font-size-5xl: clamp(3rem, 4.2vw, 4rem);
     --font-size-6xl: clamp(3.75rem, 5.2vw, 5rem);
-    --font-size-h1: 5vw;
-    --font-size-p: 1.5vw;
-    --font-size-h3: 1.8vw;
-    --font-size-h4: 1.5vw;
+    --font-size-h1: 4.5vw;
+    --font-size-p: 1.2vw;
+    --font-size-h3: 1.5vw;
+    --font-size-h4: 1.2vw;
     
-    /* Enhanced Spacing */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 3rem;
-    --space-2xl: 4rem;
-    --space-3xl: 6rem;
-    --space-4xl: 8rem;
-    --space-5xl: 12rem;
+    /* Enhanced Spacing - Reduced */
+    --space-xs: 0.25rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 3.5rem;
+    --space-4xl: 4.5rem;
+    --space-5xl: 6rem;
     
     /* Modern Shadows */
     --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -243,7 +243,7 @@ p {
     justify-content: top;
     align-items: center;
     text-align: center;
-    margin-bottom: var(--space-5xl);
+    margin-bottom: var(--space-3xl);
 }
 
 .section-header h3 {
@@ -253,10 +253,10 @@ p {
 
 /* Section Types */
 .section-content {
-    margin: 3% 10%;
+    margin: 2% 8%;
     display: flex;
     flex-direction: row;
-    gap: 5%;
+    gap: 3%;
     align-items: center;
 }
 
@@ -266,7 +266,7 @@ p {
 }
 
 .section-information {
-    margin: 2vw 0;
+    margin: 1vw 0;
 }
 
 .small-img {
@@ -283,7 +283,7 @@ p {
 
 /* Section Type 1 */
 .section-type-1 {
-    padding: var(--space-5xl) 0;
+    padding: var(--space-3xl) 0;
 }
 
 .section-type-1 .small-img {
@@ -296,7 +296,7 @@ p {
 
 /* Section Type 2 */
 .section-type-2 {
-    padding: var(--space-5xl) 0;
+    padding: var(--space-3xl) 0;
 }
 
 .section-type-2 p {
@@ -330,20 +330,20 @@ p {
 /* Timeline Section */
 .timeline-section {
     background: var(--cream-light);
-    padding: var(--space-5xl) var(--space-xl);
+    padding: var(--space-3xl) var(--space-lg);
 }
 
 .timeline-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-3xl);
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-2xl);
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .timeline-step {
     background: var(--white);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-xl);
     text-align: center;
     transition: var(--transition-luxury);
@@ -399,16 +399,16 @@ p {
 /* Section Type 3 (Purchase) */
 .section-type-3 {
     background-color: #ffffff;
-    padding: var(--space-5xl) var(--space-xl);
-    min-height: 60vh;
+    padding: var(--space-3xl) var(--space-lg);
+    min-height: 50vh;
 }
 
 .purchase-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin: 2% 10%;
+    margin: 1% 8%;
     justify-content: center;
-    gap: 2%;
+    gap: 1.5%;
 }
 
 .purchase-bottle {
@@ -509,20 +509,20 @@ p {
 /* Ingredients Section */
 .ingredients-section {
     background: var(--cream);
-    padding: var(--space-5xl) var(--space-xl);
+    padding: var(--space-3xl) var(--space-lg);
 }
 
 .ingredients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-3xl);
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-2xl);
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .ingredient-item {
     background: var(--white);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-xl);
     text-align: center;
     transition: var(--transition-luxury);
@@ -663,10 +663,10 @@ p {
 /* Responsive adjustments for larger screens */
 @media (min-width: 1200px) {
     .section-content {
-        margin: 3% 15%;
+        margin: 2% 12%;
     }
     
     .purchase-container {
-        margin: 2% 15%;
+        margin: 1% 12%;
     }
 }
