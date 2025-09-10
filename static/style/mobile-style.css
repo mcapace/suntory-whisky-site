@@ -60,13 +60,14 @@ p {
 
 /* Mobile Navigation */
 .main-nav {
-    padding: var(--space-lg) 0 !important;
+    padding: var(--space-xl) 0 !important;
 }
 
 .nav-menu {
     gap: var(--space-xs) !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
+    padding: 0 var(--space-xl) !important;
 }
 
 .nav-menu li a {
@@ -76,7 +77,7 @@ p {
 }
 
 body {
-    padding-top: 100px !important;
+    padding-top: 110px !important;
 }
 
 /* Mobile Hero */
