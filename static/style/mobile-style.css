@@ -50,32 +50,33 @@ p {
 
 /* Mobile Logo */
 .logo-header {
-    top: var(--space-md) !important;
-    padding: var(--space-sm) var(--space-lg) !important;
+    top: var(--space-sm) !important;
+    padding: var(--space-md) var(--space-lg) !important;
 }
 
 .logo-header img {
-    height: 32px !important;
+    height: 40px !important;
 }
 
 /* Mobile Navigation */
 .main-nav {
-    padding: var(--space-md) 0 !important;
+    padding: var(--space-lg) 0 !important;
 }
 
 .nav-menu {
-    gap: var(--space-sm) !important;
+    gap: var(--space-xs) !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
 }
 
 .nav-menu li a {
-    font-size: 0.75rem !important;
-    padding: var(--space-sm) var(--space-md) !important;
+    font-size: 0.7rem !important;
+    padding: var(--space-xs) var(--space-sm) !important;
+    flex: none !important;
 }
 
 body {
-    padding-top: 90px !important;
+    padding-top: 100px !important;
 }
 
 /* Mobile Hero */
