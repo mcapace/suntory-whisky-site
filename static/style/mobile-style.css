@@ -1,15 +1,15 @@
 :root {
-    --font-size-xs: clamp(0.75rem, 2vw, 1rem);
-    --font-size-sm: clamp(0.875rem, 2.5vw, 1.25rem);
-    --font-size-base: clamp(1rem, 3vw, 1.5rem);
-    --font-size-lg: clamp(1.125rem, 3.5vw, 1.75rem);
-    --font-size-xl: clamp(1.25rem, 4vw, 2rem);
-    --font-size-2xl: clamp(1.5rem, 5vw, 2.5rem);
-    --font-size-3xl: clamp(1.875rem, 6vw, 3rem);
-    --font-size-4xl: clamp(2.25rem, 7vw, 3.5rem);
-    --font-size-5xl: clamp(3rem, 8vw, 4rem);
-    --font-size-6xl: clamp(3.75rem, 10vw, 5rem);
-    --font-size-7xl: clamp(4.5rem, 12vw, 6rem);
+    --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 1.8vw, 1rem);
+    --font-size-base: clamp(1rem, 2.2vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 2.5vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 2.8vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 3.2vw, 2rem);
+    --font-size-3xl: clamp(1.875rem, 3.8vw, 2.5rem);
+    --font-size-4xl: clamp(2.25rem, 4.4vw, 3rem);
+    --font-size-5xl: clamp(3rem, 5vw, 4rem);
+    --font-size-6xl: clamp(3.75rem, 6vw, 5rem);
+    --font-size-7xl: clamp(4.5rem, 7vw, 6rem);
     
     --space-xs: 0.5rem;
     --space-sm: 1rem;
@@ -20,6 +20,7 @@
     --space-3xl: 4rem;
     --space-4xl: 5rem;
     --space-5xl: 6rem;
+    --space-6xl: 8rem;
 }
 
 .mobile-off{
@@ -61,14 +62,14 @@
 /* Mobile Section Layouts */
 .section-content {
   grid-template-columns: 1fr !important;
-  gap: var(--space-2xl) !important;
-  padding: var(--space-2xl) var(--space-lg) !important;
+  gap: var(--space-3xl) !important;
+  padding: var(--space-3xl) var(--space-lg) !important;
 }
 
 .section-type-1 .section-content {
   flex-direction: column;
   align-items: center;
-  gap: var(--space-2xl);
+  gap: var(--space-3xl);
 }
 
 .section-type-1 .section-content .section-information {
@@ -76,13 +77,12 @@
 }
 
 .section-type-1 .small-img {
-  width: 80%;
+  width: 85%;
   margin: 0;
-  border: 2px solid var(--white);
 }
 
 .section-header {
-  padding: var(--space-2xl) var(--space-lg) !important;
+  padding: var(--space-4xl) var(--space-lg) var(--space-3xl) !important;
 }
 
 /* fix headers */
@@ -129,7 +129,7 @@ h4{
 
 .purchase-container {
   grid-template-columns: 1fr !important;
-  gap: var(--space-lg) !important;
+  gap: var(--space-xl) !important;
   padding: 0 var(--space-lg) !important;
 }
 
@@ -138,8 +138,8 @@ h4{
   flex-direction: row;
   align-items: center;
   gap: var(--space-lg);
-  border-bottom: 2px solid var(--orange);
-  border-radius: var(--radius-xl);
+  border-bottom: 1px solid rgba(217, 147, 63, 0.2);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg) !important;
 }
 
