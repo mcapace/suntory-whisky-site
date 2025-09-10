@@ -1,4 +1,4 @@
-/* Mobile Styles for Sophisticated Suntory Site */
+/* Mobile Styles for Premium Suntory Site */
 
 :root {
     --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
@@ -51,7 +51,7 @@
 /* Mobile Quote Sections */
 .quote-section,
 .philosophy-section {
-  height: 50vh !important;
+  height: 60vh !important;
 }
 
 .quote-overlay,
@@ -70,6 +70,26 @@
   font-size: var(--font-size-base) !important;
 }
 
+/* Mobile Timeline Section */
+.timeline-section {
+  padding: var(--space-4xl) var(--space-lg) !important;
+}
+
+.timeline-container {
+  grid-template-columns: 1fr !important;
+  gap: var(--space-xl) !important;
+}
+
+.timeline-step {
+  padding: var(--space-lg) !important;
+}
+
+.timeline-number {
+  width: 50px !important;
+  height: 50px !important;
+  font-size: var(--font-size-xl) !important;
+}
+
 /* Mobile Purchase Section */
 .purchase-section {
   padding: var(--space-4xl) var(--space-lg) !important;
@@ -84,8 +104,26 @@
   padding: var(--space-lg) !important;
 }
 
-.product-card img {
+.product-img {
   height: 250px !important;
+}
+
+/* Mobile Ingredients Section */
+.ingredients-section {
+  padding: var(--space-4xl) var(--space-lg) !important;
+}
+
+.ingredients-grid {
+  grid-template-columns: 1fr !important;
+  gap: var(--space-xl) !important;
+}
+
+.ingredient-item {
+  padding: var(--space-lg) !important;
+}
+
+.ingredient-percentage {
+  font-size: var(--font-size-4xl) !important;
 }
 
 /* Mobile Typography */
@@ -147,7 +185,7 @@ p {
   transform: none !important;
 }
 
-.product-card:hover img {
+.product-card:hover .product-img {
   transform: none !important;
 }
 
@@ -158,5 +196,15 @@ p {
 }
 
 .shop-button:hover {
+  transform: none !important;
+}
+
+/* Mobile Timeline Steps */
+.timeline-step:hover {
+  transform: none !important;
+}
+
+/* Mobile Ingredient Items */
+.ingredient-item:hover {
   transform: none !important;
 }

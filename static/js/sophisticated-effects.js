@@ -1,20 +1,22 @@
-// Sophisticated Effects for T-Brand Studio Level Suntory Website
-// Clean, elegant interactions inspired by top luxury brands
+// Premium Interactive Features for Suntory Website
+// Smooth animations, bottle hover effects, timeline progression, and parallax
 
-class SophisticatedEffects {
+class PremiumInteractions {
     constructor() {
         this.init();
     }
 
     init() {
         this.setupScrollAnimations();
+        this.setupBottleHoverEffects();
+        this.setupTimelineProgression();
         this.setupParallaxEffects();
-        this.setupElegantInteractions();
-        this.setupSmoothScrolling();
+        this.setupTextFadeIns();
+        this.setupSmoothTransitions();
         this.setupPerformanceOptimizations();
     }
 
-    // Sophisticated Scroll Animations
+    // Smooth Scroll Animations for Section Reveals
     setupScrollAnimations() {
         const observerOptions = {
             threshold: 0.1,
@@ -28,13 +30,33 @@ class SophisticatedEffects {
                 if (entry.isIntersecting) {
                     element.classList.add('animated');
                     
+                    // Staggered animations for timeline steps
+                    if (element.classList.contains('timeline-step')) {
+                        const siblings = element.parentElement.querySelectorAll('.timeline-step');
+                        siblings.forEach((sibling, index) => {
+                            setTimeout(() => {
+                                sibling.classList.add('animated');
+                            }, index * 200);
+                        });
+                    }
+                    
                     // Staggered animations for product cards
-                    if (element.classList.contains('animate-scale')) {
-                        const siblings = element.parentElement.querySelectorAll('.animate-scale');
+                    if (element.classList.contains('product-card')) {
+                        const siblings = element.parentElement.querySelectorAll('.product-card');
                         siblings.forEach((sibling, index) => {
                             setTimeout(() => {
                                 sibling.classList.add('animated');
                             }, index * 150);
+                        });
+                    }
+                    
+                    // Staggered animations for ingredient items
+                    if (element.classList.contains('ingredient-item')) {
+                        const siblings = element.parentElement.querySelectorAll('.ingredient-item');
+                        siblings.forEach((sibling, index) => {
+                            setTimeout(() => {
+                                sibling.classList.add('animated');
+                            }, index * 100);
                         });
                     }
                 }
@@ -47,7 +69,51 @@ class SophisticatedEffects {
         });
     }
 
-    // Subtle Parallax Effects
+    // Bottle Hover Effects (Subtle Lift, Not Rotation)
+    setupBottleHoverEffects() {
+        const bottles = document.querySelectorAll('.product-img');
+        
+        bottles.forEach(bottle => {
+            bottle.addEventListener('mouseenter', () => {
+                bottle.style.transform = 'scale(1.02) translateY(-2px)';
+                bottle.style.transition = 'transform 0.3s ease-out';
+            });
+            
+            bottle.addEventListener('mouseleave', () => {
+                bottle.style.transform = 'scale(1) translateY(0)';
+            });
+        });
+    }
+
+    // Timeline Step Progression on Scroll
+    setupTimelineProgression() {
+        const timelineSteps = document.querySelectorAll('.timeline-step');
+        
+        if (!timelineSteps.length) return;
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const step = entry.target;
+                    const number = step.querySelector('.timeline-number');
+                    
+                    // Animate the number
+                    number.style.transform = 'scale(1.1)';
+                    number.style.transition = 'transform 0.3s ease-out';
+                    
+                    setTimeout(() => {
+                        number.style.transform = 'scale(1)';
+                    }, 300);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        timelineSteps.forEach(step => {
+            timelineObserver.observe(step);
+        });
+    }
+
+    // Image Parallax (Keeping All Original Photos)
     setupParallaxEffects() {
         const parallaxElements = document.querySelectorAll('.quote-section, .philosophy-section');
         
@@ -82,49 +148,34 @@ class SophisticatedEffects {
         window.addEventListener('scroll', requestTick, { passive: true });
     }
 
-    // Elegant Interactions
-    setupElegantInteractions() {
-        this.setupProductCardHovers();
-        this.setupSmoothTransitions();
-    }
-
-    setupProductCardHovers() {
-        const productCards = document.querySelectorAll('.product-card');
+    // Text Fade-ins for Quotes and Descriptions
+    setupTextFadeIns() {
+        const textElements = document.querySelectorAll('.quote-text, .philosophy-content p, .content-text p');
         
-        productCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-4px)';
+        const textObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
+        }, { threshold: 0.3 });
+
+        textElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            textObserver.observe(el);
         });
     }
 
+    // Smooth Transitions Between Sections
     setupSmoothTransitions() {
         // Add smooth transitions to interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .product-card, .shop-button');
+        const interactiveElements = document.querySelectorAll('a, button, .product-card, .shop-button, .timeline-step, .ingredient-item');
         
         interactiveElements.forEach(el => {
             el.style.transition = 'all 0.4s ease-out';
-        });
-    }
-
-    // Smooth Scrolling
-    setupSmoothScrolling() {
-        // Enhanced smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
     }
 
@@ -135,6 +186,9 @@ class SophisticatedEffects {
         
         // Optimize animations for performance
         this.optimizeAnimations();
+        
+        // Lazy load images
+        this.setupLazyLoading();
     }
 
     debounceScroll() {
@@ -157,17 +211,41 @@ class SophisticatedEffects {
             el.style.willChange = 'transform, opacity';
         });
     }
+
+    setupLazyLoading() {
+        const images = document.querySelectorAll('img');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease-out';
+                    
+                    img.onload = () => {
+                        img.style.opacity = '1';
+                    };
+                    
+                    observer.unobserve(img);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        images.forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
 }
 
-// Initialize sophisticated effects when DOM is loaded
+// Initialize premium interactions when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new SophisticatedEffects();
+    new PremiumInteractions();
 });
 
-// Add CSS for sophisticated animations
-const sophisticatedStyles = document.createElement('style');
-sophisticatedStyles.textContent = `
-    /* Sophisticated scroll animations */
+// Add CSS for premium animations
+const premiumStyles = document.createElement('style');
+premiumStyles.textContent = `
+    /* Premium scroll animations */
     .animate-on-scroll {
         opacity: 0;
         transform: translateY(20px);
@@ -211,5 +289,31 @@ sophisticatedStyles.textContent = `
         opacity: 1;
         transform: scale(1);
     }
+
+    /* Smooth transitions for all interactive elements */
+    a, button, .product-card, .shop-button, .timeline-step, .ingredient-item {
+        transition: all 0.4s ease-out;
+    }
+
+    /* Enhanced hover effects */
+    .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .timeline-step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .ingredient-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Smooth image loading */
+    img {
+        transition: opacity 0.5s ease-out;
+    }
 `;
-document.head.appendChild(sophisticatedStyles);
+document.head.appendChild(premiumStyles);
