@@ -55,27 +55,27 @@ p {
 }
 
 .logo-header img {
-    height: 28px !important;
+    height: 32px !important;
 }
 
 /* Mobile Navigation */
 .main-nav {
-    padding: var(--space-sm) 0 !important;
+    padding: var(--space-md) 0 !important;
 }
 
 .nav-menu {
-    gap: var(--space-xs) !important;
+    gap: var(--space-sm) !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
 }
 
 .nav-menu li a {
-    font-size: 0.7rem !important;
-    padding: var(--space-xs) var(--space-sm) !important;
+    font-size: 0.75rem !important;
+    padding: var(--space-sm) var(--space-md) !important;
 }
 
 body {
-    padding-top: 80px !important;
+    padding-top: 90px !important;
 }
 
 /* Mobile Hero */

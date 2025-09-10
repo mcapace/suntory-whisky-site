@@ -102,7 +102,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    padding-top: 100px; /* Account for fixed navigation */
+    padding-top: 110px; /* Account for fixed navigation */
 }
 
 /* Enhanced Typography */
@@ -162,12 +162,12 @@ p {
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 1);
     backdrop-filter: blur(20px);
     border-radius: var(--radius-2xl);
     padding: var(--space-md) var(--space-xl);
-    border: 2px solid var(--orange);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--orange);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
     transition: var(--transition-normal);
 }
 
@@ -178,9 +178,10 @@ p {
 }
 
 .logo-header img {
-    height: 40px;
+    height: 45px;
     width: auto;
     filter: none;
+    opacity: 1;
 }
 
 /* Navigation Bar */
@@ -194,7 +195,7 @@ p {
     border-bottom: 2px solid var(--orange);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     z-index: 99;
-    padding: var(--space-md) 0;
+    padding: var(--space-lg) 0;
     transition: var(--transition-normal);
 }
 
@@ -206,27 +207,29 @@ p {
 
 .nav-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: var(--space-sm);
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
 .nav-menu li a {
     color: var(--charcoal);
     text-decoration: none;
     font-family: var(--omnes-font);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: var(--space-sm) var(--space-md);
+    letter-spacing: 0.05em;
+    padding: var(--space-sm) var(--space-lg);
     border-radius: var(--radius-md);
     transition: var(--transition-fast);
     position: relative;
     border: 1px solid transparent;
+    white-space: nowrap;
 }
 
 .nav-menu li a:hover {
