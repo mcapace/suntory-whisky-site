@@ -60,24 +60,23 @@ p {
 
 /* Mobile Navigation */
 .main-nav {
-    padding: var(--space-xl) 0 !important;
+    padding: var(--space-lg) 0 !important;
 }
 
 .nav-menu {
-    gap: var(--space-xs) !important;
+    gap: var(--space-sm) !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-    padding: 0 var(--space-xl) !important;
+    padding: 0 !important;
 }
 
 .nav-menu li a {
     font-size: 0.7rem !important;
     padding: var(--space-xs) var(--space-sm) !important;
-    flex: none !important;
 }
 
 body {
-    padding-top: 110px !important;
+    padding-top: 100px !important;
 }
 
 /* Mobile Hero */
