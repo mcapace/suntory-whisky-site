@@ -46,7 +46,7 @@
     --font-size-4xl: clamp(2.25rem, 3.4vw, 3rem);
     --font-size-5xl: clamp(3rem, 4.2vw, 4rem);
     --font-size-6xl: clamp(3.75rem, 5.2vw, 5rem);
-    --font-size-h1: 4.5vw;
+    --font-size-h1: 3.5vw;
     --font-size-p: 1.2vw;
     --font-size-h3: 1.5vw;
     --font-size-h4: 1.2vw;
@@ -102,6 +102,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    padding-top: 80px; /* Account for fixed navigation */
 }
 
 /* Enhanced Typography */
@@ -141,9 +142,9 @@ h4 {
 
 p {
     text-indent: 1rem;
-    margin: 5% 0;
+    margin: 3% 0;
     font-size: var(--font-size-p);
-    line-height: 1.6;
+    line-height: 1.5;
     font-family: var(--omnes-font);
     font-weight: var(--omnes-font-weight);
     font-style: var(--omnes-font-style);
@@ -178,6 +179,60 @@ p {
     height: 32px;
     width: auto;
     filter: brightness(0) invert(1);
+}
+
+/* Navigation Bar */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(249, 245, 232, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(217, 147, 63, 0.2);
+    z-index: 99;
+    padding: var(--space-sm) 0;
+    transition: var(--transition-normal);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-lg);
+}
+
+.nav-menu li a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-family: var(--omnes-font);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.nav-menu li a:hover {
+    color: var(--orange);
+    background: rgba(217, 147, 63, 0.1);
+}
+
+.nav-menu li a.active {
+    color: var(--orange);
+    background: rgba(217, 147, 63, 0.15);
 }
 
 /* Hero Section */
@@ -218,22 +273,30 @@ p {
 .hero-title {
     font-size: var(--font-size-6xl);
     color: var(--white);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 2px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: var(--space-lg);
     letter-spacing: -0.01em;
-    font-weight: 200;
+    font-weight: 300;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
 }
 
 .hero-subtitle {
     font-size: var(--font-size-xl);
     color: var(--white);
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    font-weight: 200;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6), 0 1px 5px rgba(0, 0, 0, 0.4);
+    font-weight: 300;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     text-rendering: optimizeLegibility;
+    background: rgba(0, 0, 0, 0.25);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(8px);
 }
 
 /* Section Headers */
@@ -514,15 +577,15 @@ p {
 
 .ingredients-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-2xl);
-    max-width: 900px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .ingredient-item {
     background: var(--white);
-    padding: var(--space-lg);
+    padding: var(--space-md);
     border-radius: var(--radius-xl);
     text-align: center;
     transition: var(--transition-luxury);
@@ -537,29 +600,29 @@ p {
 }
 
 .ingredient-percentage {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
     font-weight: 300;
     background: linear-gradient(135deg, var(--whisky-gold), var(--orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
     font-family: var(--passion-sans);
 }
 
 .ingredient-item h3 {
     font-family: var(--passion-sans);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-sm);
     color: var(--deep-brown);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
     text-transform: uppercase;
     font-weight: 300;
 }
 
 .ingredient-item p {
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
-    margin: 0 0 var(--space-md) 0;
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+    margin: 0 0 var(--space-sm) 0;
     text-indent: 0;
 }
 
@@ -668,5 +731,20 @@ p {
     
     .purchase-container {
         margin: 1% 12%;
+    }
+}
+
+/* Ensure ingredient grid stays on one line on smaller screens */
+@media (max-width: 1100px) {
+    .ingredients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .ingredients-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
     }
 }

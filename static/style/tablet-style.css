@@ -45,7 +45,7 @@
 /* Tablet Ingredients */
 .ingredients-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: var(--space-2xl) !important;
+    gap: var(--space-lg) !important;
 }
 
 /* Tablet Navy Paragraph */

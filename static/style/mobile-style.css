@@ -58,6 +58,26 @@ p {
     height: 24px !important;
 }
 
+/* Mobile Navigation */
+.main-nav {
+    padding: var(--space-xs) 0 !important;
+}
+
+.nav-menu {
+    gap: var(--space-sm) !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+}
+
+.nav-menu li a {
+    font-size: var(--font-size-xs) !important;
+    padding: var(--space-xs) !important;
+}
+
+body {
+    padding-top: 60px !important;
+}
+
 /* Mobile Hero */
 .hero-content h1 {
     font-size: var(--font-size-h1) !important;
@@ -231,20 +251,20 @@ h4 {
 
 /* Mobile Ingredients Section */
 .ingredients-section {
-    padding: var(--space-4xl) var(--space-lg) !important;
+    padding: var(--space-3xl) var(--space-lg) !important;
 }
 
 .ingredients-grid {
     grid-template-columns: 1fr !important;
-    gap: var(--space-xl) !important;
+    gap: var(--space-md) !important;
 }
 
 .ingredient-item {
-    padding: var(--space-lg) !important;
+    padding: var(--space-md) !important;
 }
 
 .ingredient-percentage {
-    font-size: var(--font-size-4xl) !important;
+    font-size: var(--font-size-3xl) !important;
 }
 
 /* Mobile Parallax Reset */

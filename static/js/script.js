@@ -108,19 +108,47 @@ document.addEventListener("DOMContentLoaded", () => {
         onScrollOrResize();
     })();
 
-    // Smooth scroll for internal links
+    // Smooth scroll for internal links with offset for fixed nav
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const navHeight = document.querySelector('.main-nav').offsetHeight;
+                const targetPosition = target.offsetTop - navHeight - 20;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
+
+    // Active navigation highlighting
+    function updateActiveNav() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const navHeight = document.querySelector('.main-nav').offsetHeight;
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navHeight - 50;
+            const sectionHeight = section.offsetHeight;
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Update active nav on scroll
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
 
     // Enhanced scroll-to-top functionality
     let scrollToTopBtn = document.createElement('button');
