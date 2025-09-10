@@ -119,27 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize section reveals
     createRevealAnimation();
 
-    // Logo header scroll effect
-    function logoScrollEffect() {
-        const logoHeader = document.querySelector('.logo-header');
-        if (!logoHeader) return;
-
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            if (scrolled > 100) {
-                logoHeader.style.background = 'rgba(247, 243, 233, 0.95)';
-                logoHeader.style.borderColor = 'rgba(217, 147, 63, 0.3)';
-                logoHeader.querySelector('img').style.filter = 'brightness(0) invert(0)';
-            } else {
-                logoHeader.style.background = 'rgba(255, 255, 255, 0.1)';
-                logoHeader.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                logoHeader.querySelector('img').style.filter = 'brightness(0) invert(1)';
-            }
-        }, { passive: true });
-    }
-
-    // Initialize logo scroll effect
-    logoScrollEffect();
+    // Logo header scroll effect - removed to keep logo consistent
+    // Logo now maintains consistent appearance at all scroll positions
 
     // Enhanced timeline step hover effects
     document.querySelectorAll('.timeline-step').forEach(step => {
