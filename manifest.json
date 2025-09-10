@@ -1,0 +1,21 @@
+{
+    "name": "House of Suntory - Japanese Whisky",
+    "short_name": "Suntory Whisky",
+    "description": "Discover the authentic Japanese whisky craftsmanship of The House of Suntory",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f9f5e8",
+    "theme_color": "#d9933f",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/static/images/WAlogoBL.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["food", "lifestyle", "shopping"],
+    "lang": "en",
+    "dir": "ltr"
+}
