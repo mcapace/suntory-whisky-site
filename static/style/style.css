@@ -125,12 +125,11 @@ h1 + h1 {
 h3 {
     font-size: var(--font-size-h3);
     font-family: var(--omnes-font);
-    font-weight: 500;
+    font-weight: var(--omnes-font-weight);
     font-style: var(--omnes-font-style);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     margin-top: 0;
     color: var(--charcoal);
-    text-rendering: optimizeLegibility;
 }
 
 h4 {
@@ -144,13 +143,11 @@ p {
     text-indent: 1rem;
     margin: 5% 0;
     font-size: var(--font-size-p);
-    line-height: 1.7;
+    line-height: 1.6;
     font-family: var(--omnes-font);
-    font-weight: 400;
+    font-weight: var(--omnes-font-weight);
     font-style: var(--omnes-font-style);
     color: var(--charcoal);
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
 }
 
 .mobile-break {

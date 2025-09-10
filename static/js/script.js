@@ -195,8 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Preload critical images
     const criticalImages = [
         '/static/images/Header.png',
-        '/static/images/image1.png',
-        '/static/images/Image2-Quote-Desktop-PARALLAXv2.png'
+        '/static/images/Image1.png',
+        '/static/images/Image2-Quote-Desktop-PARALLAXV2.png'
     ];
 
     criticalImages.forEach(src => {
